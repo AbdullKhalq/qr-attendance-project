@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Home | Automated Attendance{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Automated Student Attendance</h1>
+    <p>This Step 2 website adds account registration, login, sessions, and role-based dashboards.</p>
+    <p class="muted">Lecture QR generation and attendance recording will be connected in later steps.</p>
+    <a class="button" href="{{ url_for('auth.register') }}">Create an account</a>
+</div>
+{% endblock %}

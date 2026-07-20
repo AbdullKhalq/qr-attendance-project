@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Student Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Student dashboard</h1>
+    <p><strong>Name:</strong> {{ user.full_name }}</p>
+    <p><strong>Student ID:</strong> {{ user.student_id }}</p>
+    <p class="muted">Step 3 will add the lecture QR confirmation and Attend button here.</p>
+</div>
+{% endblock %}

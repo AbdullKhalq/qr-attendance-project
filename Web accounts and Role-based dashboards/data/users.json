@@ -1,0 +1,16 @@
+[
+  {
+    "user_id": "c8afe674d8bf4dea806d4897ed222dfc",
+    "full_name": "John Appleseed",
+    "password_hash": "scrypt:32768:8:1$jXZLBTtTr8oWbhYN$4c38a741c70ae5ea84fc7053005f860af9229ce26bb02b337b8b6b1125df621f7f36df10349313ef4f91c8ac08f77cc81b4061b98347aabab11753874194bd79",
+    "role": "student",
+    "student_id": "223"
+  },
+  {
+    "user_id": "de2ff9c32e5d4593942f3084a858961d",
+    "full_name": "Not John Appleseed",
+    "password_hash": "scrypt:32768:8:1$YiYk422o7PJBmXto$42d486e2a71f9d1b3d3c74737f8d2f38505cedaa1b4b424d67349c11d6ed9fd2c847cad426124cf3f209775bffc314624d5e721bdddd920a2075f64948bbd418",
+    "role": "student",
+    "student_id": "224"
+  }
+]

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Register | Automated Attendance{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Create account</h1>
+    <form method="post">
+        <label for="role">Account type</label>
+        <select id="role" name="role" required>
+            <option value="student">Student</option>
+            <option value="lecturer">Lecturer</option>
+        </select>
+
+        <label for="full_name">Full name</label>
+        <input id="full_name" name="full_name" required minlength="2" value="{{ request.form.get('full_name', '') }}">
+
+        <label for="institutional_id">Student or staff ID</label>
+        <input id="institutional_id" name="institutional_id" required value="{{ request.form.get('institutional_id', '') }}">
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required minlength="6">
+
+        <label for="registration_code">Lecturer code (lecturers only)</label>
+        <input id="registration_code" name="registration_code" type="password">
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}

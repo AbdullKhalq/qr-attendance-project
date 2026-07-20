@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Lecturer Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Lecturer dashboard</h1>
+    <p><strong>Name:</strong> {{ user.full_name }}</p>
+    <p><strong>Staff ID:</strong> {{ user.staff_id }}</p>
+    <p class="muted">Step 3 will add lecture creation and QR generation here.</p>
+</div>
+<div class="card">
+    <h2>Registered students</h2>
+    {% if students %}
+    <table>
+        <thead><tr><th>Name</th><th>Student ID</th></tr></thead>
+        <tbody>
+        {% for student in students %}
+            <tr><td>{{ student.full_name }}</td><td>{{ student.student_id }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No students have registered yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
