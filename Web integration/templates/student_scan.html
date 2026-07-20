@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Confirm Attendance{% endblock %}
+{% block content %}
+<section class="panel narrow centered">
+    <h1>Confirm attendance</h1>
+    <dl class="details">
+        <dt>Student</dt><dd>{{ student.name }} ({{ student.student_id }})</dd>
+        <dt>Course</dt><dd>{{ lecture.course_code }} — {{ lecture.course_name }}</dd>
+        <dt>Lecturer</dt><dd>{{ lecture.lecturer_name }}</dd>
+        <dt>QR expires</dt><dd>{{ lecture.expires_at }}</dd>
+    </dl>
+    {% if already_attended %}
+        <div class="alert success">Your attendance is already recorded.</div>
+        <a class="button-link" href="{{ url_for('student.attendance') }}">View my attendance</a>
+    {% else %}
+        <form method="post" action="{{ url_for('student.attend') }}">
+            <input type="hidden" name="token" value="{{ token }}">
+            <button type="submit">Attend</button>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}

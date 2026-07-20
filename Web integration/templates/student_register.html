@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Student Registration{% endblock %}
+{% block content %}
+<section class="panel narrow">
+    <h1>Student registration</h1>
+    <p>Register once, then scan a lecturer's QR code.</p>
+    <form method="post" class="stack">
+        <input type="hidden" name="token" value="{{ token }}">
+        <label>Student ID
+            <input name="student_id" required maxlength="30" autocomplete="username">
+        </label>
+        <label>Full name
+            <input name="name" required maxlength="100" autocomplete="name">
+        </label>
+        <button type="submit">Register / continue</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}{{ lecture.course_code }} QR{% endblock %}
+{% block content %}
+<section class="panel centered">
+    <span class="badge {{ 'good' if active else 'bad' }}">{{ 'Active' if active else 'Expired' }}</span>
+    <h1>{{ lecture.course_code }} — {{ lecture.course_name }}</h1>
+    <p>Lecturer: {{ lecture.lecturer_name }}</p>
+    <img class="qr" src="{{ url_for('lecturer.qr_png', lecture_id=lecture.lecture_id) }}" alt="Lecture QR code">
+    <p class="muted break-word">{{ scan_url }}</p>
+    <p>Expires: {{ lecture.expires_at }}</p>
+</section>
+
+<section class="panel">
+    <h2>Recorded attendance ({{ records|length }})</h2>
+    {% if records %}
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Student ID</th><th>Name</th><th>Recorded at</th></tr></thead>
+                <tbody>
+                {% for record in records %}
+                    <tr><td>{{ record.student_id }}</td><td>{{ record.student_name }}</td><td>{{ record.attended_at }}</td></tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="muted">Nobody has attended yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

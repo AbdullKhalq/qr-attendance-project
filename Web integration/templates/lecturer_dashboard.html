@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Lecturer Dashboard{% endblock %}
+{% block content %}
+<section class="panel">
+    <div class="section-heading">
+        <div>
+            <h1>Lecturer dashboard</h1>
+            <p>Create a lecture and display its QR code.</p>
+        </div>
+        <span class="badge {{ 'good' if chain_valid else 'bad' }}">
+            Chain {{ 'valid' if chain_valid else 'invalid' }}
+        </span>
+    </div>
+
+    <form method="post" action="{{ url_for('lecturer.create_lecture') }}" class="form-grid">
+        <label>Course code
+            <input name="course_code" placeholder="CS401" required maxlength="30">
+        </label>
+        <label>Course name
+            <input name="course_name" placeholder="Distributed Systems" required maxlength="100">
+        </label>
+        <label>Lecturer name
+            <input name="lecturer_name" placeholder="Dr. Ahmed" required maxlength="100">
+        </label>
+        <label>QR duration (minutes)
+            <input name="expires_in_minutes" type="number" value="15" min="1" max="240" required>
+        </label>
+        <button type="submit">Create lecture QR</button>
+    </form>
+</section>
+
+<section class="panel">
+    <h2>Lectures</h2>
+    {% if lectures %}
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Course</th><th>Lecturer</th><th>Status</th><th>Attendance</th><th></th></tr></thead>
+                <tbody>
+                {% for item in lectures %}
+                    <tr>
+                        <td><strong>{{ item.lecture.course_code }}</strong><br>{{ item.lecture.course_name }}</td>
+                        <td>{{ item.lecture.lecturer_name }}</td>
+                        <td>{{ 'Active' if item.active else 'Expired' }}</td>
+                        <td>{{ item.attendance_count }}</td>
+                        <td><a href="{{ url_for('lecturer.lecture_details', lecture_id=item.lecture.lecture_id) }}">Open</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="muted">No lectures have been created yet.</p>
+    {% endif %}
+</section>
+{% endblock %}
