@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "chain": [
+    {
+      "index": 0,
+      "timestamp": "2026-07-20T14:17:30.849408+00:00",
+      "record_type": "GENESIS",
+      "data": {
+        "message": "Attendance blockchain initialized"
+      },
+      "previous_hash": "0",
+      "hash": "f3cc192d6ff4fa2e3e665b909bea97527fcb6f6baf307a8be002ac780d0d0e57"
+    },
+    {
+      "index": 1,
+      "timestamp": "2026-07-20T14:17:30.851580+00:00",
+      "record_type": "LECTURE_CREATED",
+      "data": {
+        "lecture_id": "4d3e6094-35b4-4d6b-98ed-fbaecd908f5a",
+        "course_code": "CS401",
+        "lecture_title": "Blockchain Fundamentals",
+        "lecturer_id": "L001",
+        "created_at": "2026-07-20T14:17:30.851495+00:00",
+        "expires_at": "2026-07-20T14:32:30.851495+00:00",
+        "qr_token_hash": "6aa379fa510aa24df79ee30b2b9d170dae3f6df9f2376e84dcc07b156829b379"
+      },
+      "previous_hash": "f3cc192d6ff4fa2e3e665b909bea97527fcb6f6baf307a8be002ac780d0d0e57",
+      "hash": "1761fe420a9d90741819ef4f6698b55efd2cf4a390e387191a966dd1d7b731f5"
+    }
+  ]
+}
