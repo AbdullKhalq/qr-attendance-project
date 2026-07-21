@@ -18,3 +18,9 @@ Install python3 if not installed already.
 6. Open the 127.x.x.x on your desktop browser.
 7. Open the 192.x.x.x on your phone's browser.
 8. Now, you can register an account from your phone's browser and create lectures with their QR codes from the desktop browser.
+
+## Screenshots
+![Desktop Website](/screenshots/desktop-website-lecturer-add-lecture.png)
+![Desktop Website. An expired QR code for a lecture](/screenshots/desktop-website-expired-qr-lecture.png)
+![Mobile website. A student attendance log](/screenshots/mobile-website-student-attendance-log.jpg)
+![Mobile website. A student cofirmation of attendance screen](/screenshots/mobile-website-student-confirm-attendance.jpg)
