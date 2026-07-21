@@ -1,1 +1,1 @@
-# automated-attendance-project
+# qr-attendance-project
